@@ -5,8 +5,8 @@ export const getMongoConfig = async (
   configService: ConfigService,
 ): Promise<TypegooseModuleOptions> => {
   return {
-    uri: getMongoString(configService),
-    ...getMongoOptions(),
+	uri: getMongoString(configService),
+	...getMongoOptions(),
   };
 };
 

@@ -4,6 +4,7 @@ server/node_modules
 server/.env
 server/uploads
 server/mongo-data-4.4
+server/mongo-data-5.0
 
 # Logs
 server/logs
