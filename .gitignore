@@ -3,6 +3,7 @@ server/dist
 server/node_modules
 server/.env
 server/uploads
+server/mongo-data-4.4
 
 # Logs
 server/logs
