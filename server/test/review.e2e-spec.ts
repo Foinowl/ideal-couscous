@@ -35,7 +35,7 @@ describe('AppController (e2e)', () => {
 			.send(testDto)
 			.expect(201)
 			.then(({ body }: request.Response) => {			
-                log('move',body)	
+				log('move',body)	
 				createdId = body._id;
 				expect(createdId).toBeDefined();
 				done();
@@ -43,22 +43,22 @@ describe('AppController (e2e)', () => {
 	});
 
 
-    it('/review/:id (DELETE) - success', () => {
-        return request(app.getHttpServer())
-            .delete('/review/' + createdId)
-            .expect(200);
-    });
+	it('/review/:id (DELETE) - success', () => {
+		return request(app.getHttpServer())
+			.delete('/review/' + createdId)
+			.expect(200);
+	});
 
 
-	// it('/review/create (POST) - fail', async (done) => {
-	// 	return request(app.getHttpServer())
-	// 		.post('/review/create')
-	// 		.send({ ...testDto, rating: 0 })
-	// 		.expect(400)
-	// 		.then(({ body }: request.Response) => {
-	// 			done();
-	// 		});
-	// });
+	it('/review/create (POST) - fail', async (done) => {
+		return request(app.getHttpServer())
+			.post('/review/create')
+			.send({ ...testDto, rating: 0 })
+			.expect(400)
+			.then(({ body }: request.Response) => {
+				done();
+			});
+	});
 
 	afterAll(() => {
 		disconnect();
