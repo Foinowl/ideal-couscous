@@ -37,3 +37,39 @@ server//.nyc_output
 !.vscode/launch.json
 !.vscode/extensions.json
 .vscode
+
+
+
+
+# dependencies
+top-app/node_modules
+top-app/.pnp
+top-app/.pnp.js
+
+# testing
+top-app/coverage
+
+# next.js
+top-app/.next/
+top-app/out/
+
+# production
+top-app/build
+
+# misc
+top-app/.DS_Store
+top-app/*.pem
+
+# debug
+top-app/npm-debug.log*
+top-app/yarn-debug.log*
+top-app/yarn-error.log*
+
+# local env files
+top-app/.env.local
+top-app/.env.development.local
+top-app/.env.test.local
+top-app/.env.production.local
+
+# vercel
+top-app/.vercel
