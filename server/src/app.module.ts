@@ -8,21 +8,31 @@ import { TopPageModule } from './top-page/top-page.module';
 import { ProductModule } from './product/product.module';
 import { ReviewModule } from './review/review.module';
 import { getMongoConfig } from './configs/mongo.config';
+import { FilesModule } from './files/files.module';
+import { TelegramService } from './telegram/telegram.service';
+import { TelegramModule } from './telegram/telegram.module';
+import { getTelegramConfig } from './configs/telegram.config';
 
 @Module({
-  imports: [
-	ConfigModule.forRoot(),
-	TypegooseModule.forRootAsync({
-		imports: [ConfigModule],
-		inject: [ConfigService],
-		useFactory: getMongoConfig,
-	}),
-	AuthModule,
-	TopPageModule,
-	ProductModule,
-	ReviewModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+	imports: [
+		ConfigModule.forRoot(),
+		TypegooseModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService],
+			useFactory: getMongoConfig,
+		}),
+		AuthModule,
+		TopPageModule,
+		ProductModule,
+		ReviewModule,
+		FilesModule,
+		TelegramModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService],
+			useFactory: getTelegramConfig,
+		}),
+	],
+	controllers: [AppController],
+	providers: [AppService, TelegramService],
 })
 export class AppModule {}

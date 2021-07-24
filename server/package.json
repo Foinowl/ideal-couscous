@@ -34,6 +34,7 @@
 		"date-fns": "^2.19.0",
 		"fs-extra": "^9.1.0",
 		"mongoose": "5.10.18",
+		"nano": "^9.0.3",
 		"nestjs-typegoose": "^7.1.38",
 		"passport": "^0.4.1",
 		"passport-jwt": "^4.0.0",
