@@ -8,7 +8,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStratagy } from './strategies/jwt.strategy';
 import { getJWTConfig } from '../configs/jwt.config';
 
-
 @Module({
 	controllers: [AuthController],
 	imports: [

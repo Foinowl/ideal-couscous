@@ -1,5 +1,6 @@
-import { Body, 
-	Controller, 
+import {
+	Body,
+	Controller,
 	Delete,
 	Get,
 	HttpException,
@@ -8,7 +9,7 @@ import { Body,
 	Post,
 	UseGuards,
 	UsePipes,
-	ValidationPipe 
+	ValidationPipe,
 } from '@nestjs/common';
 import { TelegramService } from '../telegram/telegram.service';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';

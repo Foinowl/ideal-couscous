@@ -7,7 +7,6 @@ import { USER_NOT_FOUND_ERROR, WRONG_PASSWORD_ERROR } from './auth.constants';
 import { AuthDto } from './dto/auth.dto';
 import { UserModel } from './user.model';
 
-
 @Injectable()
 export class AuthService {
 	constructor(
