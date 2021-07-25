@@ -67,9 +67,10 @@ top-app/yarn-error.log*
 
 # local env files
 top-app/.env.local
+top-app/.env.production
+top-app/.env.development
 top-app/.env.development.local
 top-app/.env.test.local
-top-app/.env.production.local
 
 # vercel
 top-app/.vercel
