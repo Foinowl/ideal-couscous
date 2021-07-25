@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Htag } from '../components';
+import { Layout, withLayout } from '../layout/Layout';
 
-export default function Home(): JSX.Element{
+function Home(): JSX.Element{
   return (
-		<div>
+		<>
 			<Htag tag="h1">Текст</Htag>
 			<Button appearance="primary" arrow="right">
 				Кнопка
@@ -11,6 +12,9 @@ export default function Home(): JSX.Element{
 			<Button appearance="ghost" arrow="down">
 				Кнопка
 			</Button>
-		</div>
+		</>
 	)
 }
+
+
+export default withLayout(Home)
