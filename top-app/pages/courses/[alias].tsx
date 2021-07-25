@@ -22,7 +22,7 @@ export default withLayout(Course)
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const { data: menu } = await axios.post<MenuItem[]>(
-		process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+		process.env.NEXT_PUBLIC_DOMAIN + "/top-page/find",
 		{
 			firstCategory,
 		}

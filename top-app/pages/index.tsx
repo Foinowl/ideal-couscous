@@ -15,11 +15,6 @@ function Home({ menu, firstCategory }: HomeProps): JSX.Element {
 			<Button appearance="ghost" arrow="down">
 				Кнопка
 			</Button>
-			<ul>
-				{menu.map((el) => (
-					<li key={el._id.secondCategory}>{el._id.secondCategory}</li>
-				))}
-			</ul>
 		</>
 	)
 }
