@@ -1,24 +1,24 @@
 import { LayoutProps } from './Layout.props';
-import { Header } from './Header/Header'
-import { Footer } from "./Footer/Footer"
-import { SideBar } from './SiderBar/SiderBar';
-import { FunctionComponent } from 'react';
-import { AppContextProvider, IAppContext } from "../context/app.context"
+import styles from './Layout.module.css';
+import cn from 'classnames';
+import { Header } from './Header/Header';
+import React, { FunctionComponent } from 'react';
+import { Sidebar } from './Sidebar/Sidebar';
+import { Footer } from './Footer/Footer';
+import { AppContextProvider, IAppContext } from '../context/app.context';
 
-import styles from "./Layout.module.css"
-
-export const Layout = ({children}:LayoutProps) : JSX.Element => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
 		<div className={styles.wrapper}>
 			<Header className={styles.header} />
-			<SideBar className={styles.sidebar} />
+			<Sidebar className={styles.sidebar} />
 			<div className={styles.body}>
-				<div>{children}</div>
+				{children}
 			</div>
 			<Footer className={styles.footer} />
 		</div>
-	)
-}
+	);
+};
 
 export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
 	return function withLayoutComponent(props: T): JSX.Element {
@@ -28,6 +28,6 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(Comp
 					<Component {...props} />
 				</Layout>
 			</AppContextProvider>
-		)
-	}
-}
+		);
+	};
+};

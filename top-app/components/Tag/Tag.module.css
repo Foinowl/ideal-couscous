@@ -3,7 +3,6 @@
 
 	box-sizing: border-box;
 	margin-right: 5px;
-
 	border-radius: 20px;
 }
 
@@ -34,7 +33,7 @@
 
 .grey {
 	color: var(--white);
-	background: #51648C;
+	background: #B3C0D9;
 
 	font-weight: bold;
 }
@@ -48,6 +47,6 @@
 
 .primary {
 	color: var(--primary);
-	border: 1px solid var(--primary);
 	background: none;
+	border: 1px solid var(--primary);
 }
