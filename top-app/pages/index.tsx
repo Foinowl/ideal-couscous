@@ -8,13 +8,6 @@ import { MenuItem } from '../interfaces/menu.interface';
 function Home({ menu, firstCategory }: HomeProps): JSX.Element {
 	return (
 		<>
-			<Htag tag="h1">Текст</Htag>
-			<Button appearance="primary" arrow="right">
-				Кнопка
-			</Button>
-			<Button appearance="ghost" arrow="down">
-				Кнопка
-			</Button>
 		</>
 	)
 }
