@@ -11,6 +11,7 @@ import Image from "next/image"
 import React, { useState } from 'react'
 import { Review } from '..'
 import { ReviewForm } from '../ReviewForm/ReviewForm'
+import { useRef } from 'react'
 
 export const Product = ({
 	product,
@@ -18,6 +19,18 @@ export const Product = ({
 	...props
 }: ProductProps): JSX.Element => {
 	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false)
+	const reviewRef = useRef<HTMLDivElement>(null)
+
+	const scrollToReview = () => {
+		setIsReviewOpened(true)
+		reviewRef.current?.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		})
+		reviewRef.current?.focus()
+	}
+
+
 	return (
 		<>
 			<Card className={styles.product}>
@@ -53,7 +66,7 @@ export const Product = ({
 				</div>
 				<div className={styles.priceTitle}>цена</div>
 				<div className={styles.creditTitle}>кредит</div>
-				<div className={styles.rateTitle}>
+				<div className={styles.rateTitle} onClick={scrollToReview} >
 					{product.reviewCount}{" "}
 					{declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
 				</div>
@@ -101,6 +114,7 @@ export const Product = ({
 					[styles.opened]: isReviewOpened,
 					[styles.closed]: !isReviewOpened,
 				})}
+				ref={reviewRef}
 			>
 				{product.reviews.map((r) => (
 					<div key={r._id}>
