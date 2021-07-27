@@ -45,10 +45,6 @@
 	grid-column: start / middle;
 }
 
-.advBlock {
-	grid-column: middle / end;
-}
-
 .logo img {
 	border-radius: 5px;
 }
@@ -108,6 +104,7 @@
 .advBlock {
 	font-size: 16px;
 	line-height: 22px;
+	grid-column: middle / end;
 }
 
 .advTitle {
@@ -120,7 +117,7 @@
 	margin-bottom: 20px;
 	padding-left: 15px;
 
-	border-left: 2px solid var(--green);
+	border-left: 2px solid #1DC37E;
 }
 
 .disadvantages {
@@ -151,15 +148,9 @@
 	border-bottom: 1px dashed var(--gray-light);
 }
 
-.closed {
+.reviews {
 	overflow: hidden;
 
-	max-height: 0;
-	padding: 0;
-}
-
-.opened {
-	max-height: auto;
 	padding: 30px;
 }
 

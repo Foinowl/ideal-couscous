@@ -4,14 +4,14 @@ import styles from "./TopPageComponent.module.css"
 import { HhData } from "../../components"
 import { TopLevelCategory } from "../../interfaces/page.interface"
 import { SortEnum } from "../../components/Sort/Sort.props"
-import { useEffect, useReducer } from "react"
+import { ForwardedRef, useEffect, useReducer, forwardRef } from "react"
 import { sortReducer } from "./sort.reducer"
+import {motion} from 'framer-motion'
 
 export const TopPageComponent = ({
 	page,
 	products,
-	firstCategory,
-}: TopPageComponentProps): JSX.Element => {
+	firstCategory}: TopPageComponentProps): JSX.Element => {
 	const [{ products: sortedProducts, sort }, dispathSort] = useReducer(
 		sortReducer,
 		{ products, sort: SortEnum.Rating }
@@ -38,7 +38,7 @@ export const TopPageComponent = ({
 			</div>
 			<div>
 				{sortedProducts &&
-					sortedProducts.map((p) => <Product key={p._id} product={p} />)}
+					sortedProducts.map((p) => <Product layout key={p._id} product={p} />)}
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag="h2">Вакансии - {page.category}</Htag>
