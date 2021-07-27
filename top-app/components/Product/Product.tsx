@@ -66,9 +66,11 @@ export const Product = ({
 				</div>
 				<div className={styles.priceTitle}>цена</div>
 				<div className={styles.creditTitle}>кредит</div>
-				<div className={styles.rateTitle} onClick={scrollToReview} >
-					{product.reviewCount}{" "}
-					{declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+				<div className={styles.rateTitle}>
+					<a href="#ref" onClick={scrollToReview}>
+						{product.reviewCount}{" "}
+						{declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+					</a>
 				</div>
 				<Divider className={styles.hr} />
 				<div className={styles.description}>{product.description}</div>
