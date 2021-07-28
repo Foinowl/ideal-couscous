@@ -4,7 +4,7 @@
 	grid-template-rows: auto 1fr auto;
 
 	min-height: 100vh;
-	gap: 0 30px;
+	gap: 40px 30px;
 	grid-template-areas:
 		". header header ."
 		". sidebar body ."
@@ -13,8 +13,6 @@
 
 .header {
 	grid-area: header;
-
-	display: none;
 }
 
 .sidebar {
@@ -23,10 +21,30 @@
 
 .body {
 	grid-area: body;
+
+	outline: none;
 }
 
 .footer {
 	grid-area: footer;
+}
+
+.skipLink {
+	position: fixed;
+	top: 0;
+	left: 100px;
+
+	display: block;
+	overflow: hidden;
+
+	height: 0;
+
+	color: var(--white);
+	background: var(--primary);
+}
+
+.displayed {
+	height: auto;
 }
 
 @media (max-width: 765px) {
@@ -36,13 +54,14 @@
 			"header"
 			"body"
 			"footer";
+		gap: 10px;
 	}
 
 	.sidebar {
-		display: none;
+		display: none !important;
 	}
 
-	.header {
-		display: block;
+	.body {
+		padding: 15px;
 	}
 }

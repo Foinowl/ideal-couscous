@@ -19,6 +19,7 @@ function Type({ firstCategory }: TypeProps): JSX.Element {
 export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
+	console.log(firstLevelMenu.map((m) => "/" + m.route))
 	return {
 		paths: firstLevelMenu.map(m => '/' + m.route),
 		fallback: true
@@ -40,6 +41,8 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
 	const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
 		firstCategory: firstCategoryItem.id,
 	})
+	console.log("MENU", menu)
+	console.log("firstCategoryItem", firstCategoryItem)
 	return {
 		props: {
 			menu,

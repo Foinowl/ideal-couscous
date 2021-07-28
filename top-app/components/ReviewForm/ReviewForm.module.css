@@ -27,14 +27,21 @@
 	gap: 20px;
 }
 
-.success {
+.panel {
 	position: relative;
 
 	margin-top: 20px;
 	padding: 20px;
 
 	border-radius: 5px;
+}
+
+.success {
 	background: var(--green-light);
+}
+
+.error {
+	background: var(--red-light);
 }
 
 .successTitle {
@@ -46,7 +53,12 @@
 	top: 20px;
 	right: 20px;
 
-	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.error .close path {
+	stroke: var(--red);
 }
 
 @media screen and (max-width: 1100px) {
