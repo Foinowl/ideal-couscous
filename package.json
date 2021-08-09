@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "cd top-app && npm run start",
 		"predeploy": "cd top-app && npm run build",
-		"deploy": "cd top-app && gh-pages -d build"
+		"deploy": "gh-pages -d build"
 	},
 	"repository": {
 		"type": "git",
